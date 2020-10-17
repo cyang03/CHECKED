@@ -1,6 +1,11 @@
 # CHECKED (Only For Research)
 This is the first version of the dataset.
 
+We updated the dataset.
+
+# Notice
+**[Update]** To obey Weibo Policy and guard users' privacy, we will not make `user name` public. In addition, we released **hashed** `user_id` in public instead of original `user_id` of Weibo.
+
 # Overiew
 This repository includes 2 folders which are code and dataset.
 
@@ -29,5 +34,7 @@ Each microblog (json file) consists of the following components:
 
 `news_total.csv` is a combination of `news_fake.csv` and `news_real.csv`.
 
-# Notice
-Due to Weibo policy, part of our dataset will be modified in visibility.
+`list.txt` includes all the keywords that we used to determine if the microblog about COVID-19.
+
+# Contact
+Please contact zhouxinyi@data.syr.edu if you have any question on our dataset.
