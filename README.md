@@ -2,7 +2,9 @@
 The first Chinese COVID-19 fake news dataset based on the Weibo platform.
 
 # Privacy protection
-Note that to comply with Weibo Policy and protect users' privacy, we did not make the `user name` public, which enables to identify Weibo users. In addition, we released the **hashed** `user_id` instead of the original `user_id` of Weibo. 
+**[Notice]** We care about users' privacy and made (will keep making) efforts to protecting it.
+* We did not make the `user name` public, which enables to identify Weibo users. In addition, we released the **hashed** `user_id` instead of the original `user_id` of Weibo. 
+* Please use the CHECKED data only for academic research.
 
 # Overiew
 This repository includes 2 folders which are code and dataset.
@@ -33,6 +35,17 @@ Each microblog (json file) consists of the following components:
 `news_total.csv` is a combination of `news_fake.csv` and `news_real.csv`.
 
 `list.txt` includes all the keywords that we used to determine if the microblog about COVID-19.
+
+## Reference
+If you are using this dataset, please kindly cite the following paper:
+~~~~
+@article{yang2020checked,
+  title={CHECKED: Chinese COVID-19 Fake News Dataset},
+  author={Yang, Chen and Zhou, Xinyi and Zafarani, Reza},
+  journal={arXiv preprint},
+  year={2020}
+}
+~~~~
 
 # Contact
 Please contact zhouxinyi@data.syr.edu if you have any question on our dataset.
