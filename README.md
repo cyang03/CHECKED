@@ -1,10 +1,8 @@
-# CHECKED (Only For Research)
-This is the first version of the dataset.
+# CHECKED
+The first Chinese COVID-19 fake news dataset based on the Weibo platform.
 
-We updated the dataset.
-
-# Notice
-**[Update]** To obey Weibo Policy and guard users' privacy, we will not make `user name` public. In addition, we released **hashed** `user_id` in public instead of original `user_id` of Weibo.
+# Privacy protection
+Note that to comply with Weibo Policy and protect users' privacy, we did not make the `user name` public, which enables to identify Weibo users. In addition, we released the **hashed** `user_id` instead of the original `user_id` of Weibo. 
 
 # Overiew
 This repository includes 2 folders which are code and dataset.
@@ -12,7 +10,7 @@ This repository includes 2 folders which are code and dataset.
 The `code` folder contains codes for collecting COVID-19 microblogs and analyzing collected data.
 
 The `dataset` folder includes 2 folders - `fake_news` and `real_news` where 
-* `fake_news`  covers 344 microblogs labeled 'fake'.
+* `fake_news`  includes 344 microblogs labeled 'fake'.
 * `real_news` involves 1776 microblogs labeled 'real'.
 
 Each microblog (json file) consists of the following components:
