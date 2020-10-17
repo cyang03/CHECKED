@@ -1,8 +1,8 @@
 # CHECKED
 The first Chinese COVID-19 fake news dataset based on the Weibo platform.
 
-# Privacy protection
-**[Notice]** We care about users' privacy and made (will keep making) efforts to protecting it.
+# Notice
+We care about users' privacy and made (will keep making) efforts to protecting it.
 * We did not make the `user name` public, which enables to identify Weibo users. In addition, we released the **hashed** `user_id` instead of the original `user_id` of Weibo. 
 * Please use the CHECKED data only for academic research.
 
