@@ -183,9 +183,20 @@ def get_first_page_comments(mid):
         comment_dict['id'] = str(comment['comment_id'])
         raw_date = comment.select_one('div.WB_func > div.WB_from').string
         if raw_date[0:4] == '2019':
-            comment_dict['date'] = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+            o_time = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+            formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+            timeStamp = int(time.mktime(formate))
+            localTime = time.localtime(timeStamp) 
+            strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+            comment_dict['date'] = strTime
         else:
-            comment_dict['date'] = '2020-0'+ raw_date.replace('月', '-').replace('日', '')
+            o_time = '2020-'+ raw_date.replace('月', '-').replace('日', '')
+            formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+            timeStamp = int(time.mktime(formate))
+            localTime = time.localtime(timeStamp) 
+            strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+            comment_dict['date'] = strTime
+
         comment_dict['user_name'] = comment.select_one('div.WB_text > a').string
         comment_dict['user_id'] = str(comment.select_one('div.WB_text > a')['href']).split('/')[-1]
         for child in comment.select_one('div.list_con > div.WB_text').children:
@@ -260,9 +271,19 @@ def get_next_page_comments(soup):
         comment_dict['id'] = str(comment['comment_id'])
         raw_date = comment.select_one('div.WB_func > div.WB_from').string
         if raw_date[0:4] == '2019':
-            comment_dict['date'] = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+            o_time = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+            formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+            timeStamp = int(time.mktime(formate))
+            localTime = time.localtime(timeStamp) 
+            strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+            comment_dict['date'] = strTime
         else:
-            comment_dict['date'] = '2020-0'+ raw_date.replace('月', '-').replace('日', '')
+            o_time = '2020-'+ raw_date.replace('月', '-').replace('日', '')
+            formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+            timeStamp = int(time.mktime(formate))
+            localTime = time.localtime(timeStamp) 
+            strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+            comment_dict['date'] = strTime
         comment_dict['user_name'] = comment.select_one('div.WB_text > a').string
         comment_dict['user_id'] = str(comment.select_one('div.WB_text > a')['href']).split('/')[-1]
         
@@ -309,9 +330,19 @@ def get_reposts(mid):
         repost_dict['id'] = str(repost['mid'])
         raw_date = repost.select_one('div.WB_func > div.WB_from').get_text()
         if raw_date[0:4] == '2019':
-            repost_dict['date'] = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+            o_time = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+            formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+            timeStamp = int(time.mktime(formate))
+            localTime = time.localtime(timeStamp) 
+            strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+            repost_dict['date'] = strTime
         else:
-            repost_dict['date'] = '2020-0'+ raw_date.replace('月', '-').replace('日', '')
+            o_time = '2020-'+ raw_date.replace('月', '-').replace('日', '')
+            formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+            timeStamp = int(time.mktime(formate))
+            localTime = time.localtime(timeStamp) 
+            strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+            repost_dict['date'] = strTime
         repost_dict['user_name'] = repost.select_one('div.WB_text > a').string
         repost_dict['user_id'] = str(repost.select_one('div.WB_text > a')['href']).split('/')[-1]
         repost_dict['text'] = repost.select_one('span[node-type="text"]').get_text()
@@ -361,9 +392,19 @@ def get_reposts(mid):
                 repost_dict2['id'] = str(__repost['mid'])
                 raw_date = __repost.select_one('div.WB_func > div.WB_from').get_text()
                 if raw_date[0:4] == '2019':
-                    repost_dict2['date'] = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+                    o_time = '2019-'+ raw_date.replace('月', '-').replace('日', '')
+                    formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+                    timeStamp = int(time.mktime(formate))
+                    localTime = time.localtime(timeStamp) 
+                    strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+                    repost_dict['date'] = strTime
                 else:
-                    repost_dict2['date'] = '2020-0'+ raw_date.replace('月', '-').replace('日', '')
+                    o_time = '2020-'+ raw_date.replace('月', '-').replace('日', '')
+                    formate = time.strptime(o_time, "%Y-%m-%d %H:%M")
+                    timeStamp = int(time.mktime(formate))
+                    localTime = time.localtime(timeStamp) 
+                    strTime = time.strftime("%Y-%m-%d %H:%M", localTime)
+                    repost_dict['date'] = strTime
                 repost_dict2['user_name'] = __repost.select_one('div.WB_text > a').string
                 repost_dict2['text'] = __repost.select_one('span[node-type="text"]').get_text()
                 
@@ -394,7 +435,7 @@ def parse_weibo(soup):
 				"text":"",
 				"pic_url":[],
 				"video_url":"",
-				"comments_num":"",
+				"comment_num":"",
 				"repost_num":"",
 				"like_num":"",
 				"comments":[],
@@ -451,8 +492,7 @@ def parse_weibo(soup):
         elif weibo.select_one('li[action-type="feed_list_media_img"]'):
             __pic = weibo.select_one('li[action-type="feed_list_media_img"] img')
             weibo_data['pic_url'].append('https:'+__pic['src'])
-        else:
-            print('\t\t图片url获取结果：该微博没有图片')
+        else:('No picture')
             
         if weibo.select_one('li[node-type="fl_h5_video"]'):
             try:
@@ -460,9 +500,9 @@ def parse_weibo(soup):
                 encoded_video_url=re.compile('=(.*?)=').findall(video_source)[0]
                 weibo_data['video_url'] = parse.unquote(parse.unquote(encoded_video_url))
             except KeyError:
-                print('存在直播内容，跳过')
+                print('Live show')
         else:
-            print('\t\t视频url获取结果：该微博没有视频')
+            print('No video')
         weibo_data['comments_num'] = check_num(weibo.select('span[node-type="comment_btn_text"] em')[-1].string)
         weibo_data['repost_num'] = check_num(weibo.select('span[node-type="forward_btn_text"] em')[-1].string)
         weibo_data['like_num'] = check_num(weibo.select('span[node-type="like_status"] em')[-1].string)
@@ -481,7 +521,7 @@ def parse_weibo(soup):
         if eval(weibo_data['repost_num']) > 0:
             weibo_data['reposts'] = get_reposts(weibo_data['id'])
             
-        print('转发写入json文件...')
+        print('Saving json file')
         json_str = json.dumps(weibo_data,ensure_ascii=False)
         with open(weibo_data['id']+'.json', 'w') as json_file:
             json_file.write(json_str)
