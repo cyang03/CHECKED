@@ -25,7 +25,7 @@ Each microblog (json file) consists of the following components:
 * `video url`: The URL of the video information of microblog. Note that each microblog (i) can only include at most one video; and (ii) cannot attach both the video and image.
 * `comment num`, `repost num`, and `like num`: The number of comments, forwards, and likes of the microblog.
 * `comments`: The detailed information of user comments for the microblog, including (i) the ID, date, and content of comments (microblogs), and (ii) the ID and name of commenters (users). Note that for each comment, no more than one image and no video are allowed.
-* `reposts`: The detailed information of user forwards for the microblog, which specifies (i) the ID, date, and content of forwards (microblogs), and (ii) the ID and name of forwarders (users). Similar to comments, each forward has at most one image and no video information. Note that if a user forwards a repost with an image, the `pic url` of the new forward will also include this image along with the original image.
+* `reposts`: The detailed information of user forwards for the microblog, which specifies (i) the ID, date, and content of forwards (microblogs), and (ii) the ID and name of forwarders (users). Similar to comments, each forward has at most one image and no video information. Note that if a user forwards a repost with an image, the `pic_url` of the new forward will also include this image along with the original image.
 
 `news_fake.csv` contains all the fake microblogs in `fake_news` with identical components except for 'comments' and 'reposts'.
 
