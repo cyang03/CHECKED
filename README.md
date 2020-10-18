@@ -16,17 +16,16 @@ The `dataset` folder includes 2 folders - `fake_news` and `real_news` where
 * `real_news` involves 1776 microblogs labeled 'real'.
 
 Each microblog (json file) consists of the following components:
-* `id`: each microblog is identified by a unique 16 digit ID assigned by Weibo.
-* `label`: the label of each microblog is either 'real' or 'fake'.
-* `date`: It corresponds to the date (in format yyyy-mm-dd hh:mm) that the microblog is posted.
-* `user_id`: Weibo assigns each of its users a unique ID number with 10 digits. Note that each user can change his ID only once to a string formed by 4-20 characters, where letters are allowed.
-* `user name`: It is the displayed name ofWeibo users. In addition to user id, user name can also be used to identify a user due to its uniqueness.
-* `text`: It contains the textual information of microblogs.
-* `pic url`: This URL contains the visual information of microblogs. Note that users are allowed to attach no more than 18 images in each microblog.
-* `video url`: This URL provides the video information of microblogs. Note that each microblog (i) can only include at most one video; and (ii) cannot attach both the video and image.
-* `comment num`, `repost num`, and `like num`: The numbers indicate how many comments, forwards, and likes the microblog has, respectively.
-* `comments`: It contains the detailed information of user comments for each microblog. Such detailed information includes the ID, date, and content of comments (microblogs), and the ID and name of commenters (users). Note that for each comment, no more than one image and no video are allowed.
-* `reposts`: It contains the detailed information of user forwards for each microblog, which specifies the ID, date, and content of forwards (microblogs), and the ID and name of forwarders (users). Similar to comments, each forward has at most one image and no video information. It is noted that that if a user forwards a repost with an image, the picurl of the new forward will also include this image together with its own image.
+* `id`: The microblog's ID. Each microblog is identified by a unique 16 digit ID assigned by Weibo.
+* `label`: The microblog's label. The label of each microblog is either 'real' or 'fake'.
+* `date`: The date that the microblog is posted (in format yyyy-mm-dd hh:mm).
+* `user_id`: The user's ID who posted the microblog. Weibo assigns each of its users a unique ID number with 10 digits. Note that each user can change his ID only once to a string formed by 4-20 characters, where letters are allowed.
+* `text`: Textual information of microblogs.
+* `pic url`: The URL of the visual information of microblog. Note that users are allowed to attach no more than 18 images in each microblog.
+* `video url`: The URL of the video information of microblog. Note that each microblog (i) can only include at most one video; and (ii) cannot attach both the video and image.
+* `comment num`, `repost num`, and `like num`: The number of comments, forwards, and likes of the microblog.
+* `comments`: The detailed information of user comments for the microblog, including (i) the ID, date, and content of comments (microblogs), and (ii) the ID and name of commenters (users). Note that for each comment, no more than one image and no video are allowed.
+* `reposts`: The detailed information of user forwards for the microblog, which specifies (i) the ID, date, and content of forwards (microblogs), and (ii) the ID and name of forwarders (users). Similar to comments, each forward has at most one image and no video information. Note that if a user forwards a repost with an image, the `pic url` of the new forward will also include this image along with the original image.
 
 `news_fake.csv` contains all the fake microblogs in `fake_news` with identical components except for 'comments' and 'reposts'.
 
@@ -42,7 +41,7 @@ If you are using this dataset, please kindly cite the following paper:
 @article{yang2020checked,
   title={CHECKED: Chinese COVID-19 Fake News Dataset},
   author={Yang, Chen and Zhou, Xinyi and Zafarani, Reza},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:submit/3422152},
   year={2020}
 }
 ~~~~
