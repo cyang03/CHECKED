@@ -1,39 +1,91 @@
 # CHECKED
-The first Chinese COVID-19 fake news dataset based on the Weibo platform.
+The first Chinese COVID-19 fake news dataset based on the Weibo platform. Please check out our paper [here](https://arxiv.org/pdf/2010.09029.pdf).
 
 ## Notice
 We care about users' privacy and made (will keep making) efforts to protecting it.
-* We did not make the `user name` public, which enables to identify Weibo users. In addition, we released the **hashed** `user_id` instead of the original `user_id` of Weibo. 
+* For microblogs: We released the **hashed** `id` instead of the original `id` of microblogs.
+* For users: We did not make the `user_name` public, which enables to identify Weibo users. In addition, we released the **hashed** `user_id` instead of the original `user_id`. 
 * Please use the CHECKED data only for academic research.
 
+**Update:** 
+We add `analysis` as a new keyword for each microblog labeled as *fake*. `analysis` contains the expert analysis and justification, which details the news falseness. Please check out the [*dataset*](https://github.com/cyang03/CHECKED/tree/master/dataset) folder for details. We also provide benchmark results of [FastText](https://arxiv.org/pdf/1607.01759.pdf), [TextCNN](https://arxiv.org/pdf/1408.5882.pdf), [TextRNN](https://arxiv.org/pdf/1605.05101.pdf), [Att-TextRNN](https://www.aclweb.org/anthology/P16-2034.pdf), and [Transformer](https://arxiv.org/pdf/1706.03762.pdf) using the CHECKED data in predicting fake news. Please check out the [*baseline*](https://github.com/cyang03/CHECKED/tree/master/baseline) folder for details. (June 9, 2021)
+
 ## Overiew
-This repository includes 2 folders which are code and dataset.
+This repository includes three folders, named as (1) dataset, (2) code, (3) baseline, respectively.
 
-The `code` folder contains codes for collecting COVID-19 microblogs and analyzing collected data.
+* *dataset*: This folder contains the CHECKED data in both `json` and `csv` format and the list of keywords used to determine whether a microblog is relevant to COVID-19 or not. Specifically,
+    * *fake_news*: This folder includes 344 fake microblogs (in `json` format). 
+    * *real_news*: This folder includes 1760 real microblogs (in `json` format).
+    * **.csv*: These `csv` files are converted from `json` files in the *fake_news* and *real_news* folder.
+    * *keyword_list.txt*: This file includes all the keywords that we use to determine if the microblog is about COVID-19.
 
-The `dataset` folder includes 2 folders - `fake_news` and `real_news` where 
-* `fake_news`  includes 344 microblogs labeled 'fake'.
-* `real_news` involves 1776 microblogs labeled 'real'.
+    A more detailed README regarding *dataset* is available [here](https://github.com/cyang03/CHECKED/tree/master/dataset).
 
-Each microblog (json file) consists of the following components:
-* `id`: The microblog's ID. Each microblog is identified by a unique 16 digit ID assigned by Weibo.
-* `label`: The microblog's label. The label of each microblog is either 'real' or 'fake'.
-* `date`: The date that the microblog is posted (in format yyyy-mm-dd hh:mm).
-* `user_id`: The user's ID who posted the microblog. Weibo assigns each of its users a unique ID number with 10 digits. Note that each user can change his ID only once to a string formed by 4-20 characters, where letters are allowed.
-* `text`: Textual information of microblogs.
-* `pic url`: The URL of the visual information of microblog. Note that users are allowed to attach no more than 18 images in each microblog.
-* `video url`: The URL of the video information of microblog. Note that each microblog (i) can only include at most one video; and (ii) cannot attach both the video and image.
-* `comment num`, `repost num`, and `like num`: The number of comments, forwards, and likes of the microblog.
-* `comments`: The detailed information of user comments for the microblog, including (i) the ID, date, and content of comments (microblogs), and (ii) the ID and name of commenters (users). Note that for each comment, no more than one image and no video are allowed.
-* `reposts`: The detailed information of user forwards for the microblog, which specifies (i) the ID, date, and content of forwards (microblogs), and (ii) the ID and name of forwarders (users). Similar to comments, each forward has at most one image and no video information. Note that if a user forwards a repost with an image, the `pic_url` of the new forward will also include this image along with the original image.
+* *code*: This folder contains the code used for collecting and analyzing the CHECKED data. 
 
-`news_fake.csv` contains all the fake microblogs in `fake_news` with identical components except for 'comments' and 'reposts'.
+* *baseline*: This folder contains the data and code to get benchmark results. A more detailed README is available [here](https://github.com/cyang03/CHECKED/tree/master/baseline).
 
-`news_real.csv` contains all the real microblogs in `real_news` with identical components except for 'comments' and 'reposts'.
+**Microblog Components:**
+For each microblog, we collect its following components:
+* `id`: The microblog's ID. (**hashed**) 
+* `label`: The microblog's label (*real* or *fake*).
+* `date`: The date that the microblog is posted.
+* `user_id`: The user's ID who posts the microblog. (**hashed**)
+* `text`, `pic_url`, and `video_url`: Textual and visual information of microblogs.
+* `comment_num`, `repost_num`, and `like_num`: The number of comments, forwards, and likes of the microblog.
+* `comments` and `reposts`: The detailed information of user comments and forwards for the microblog.
+* `analysis`: The analysis and justification of experts. (only for fake microblogs)
 
-`news_total.csv` is a combination of `news_fake.csv` and `news_real.csv`.
-
-`list.txt` includes all the keywords that we used to determine if the microblog about COVID-19.
+**File Structure:** 
+```
+├── README.md
+├── dataset
+│   ├── README.md
+│   ├── fake_news.csv
+│   ├── real_news.csv
+│   ├── keyword_list.txt
+│   ├── fake_news_comment.csv
+│   ├── fake_news_repost.csv
+│   ├── real_news_comment.csv
+│   ├── real_news_repost.csv
+│   ├── fake_news
+│   │   ├── 0023fbc0cb2119235e6482ca221e34fb.json
+│   │   ├── 0031ff8f6d0f6502fde093a640ae836a.json
+│   │   └── ....        
+│   └── real_news
+│       ├── 00970e529583ba55bc3bb2c4eff889df.json
+│       ├── 022012c3a40b424a85a6b0a2f9bf9726.json
+│       └── ....                    
+├── baseline
+│   ├── README.md
+│   ├── data
+│   │   ├── vocab.pkl
+│   │   ├── embedding_SougouNews.npz
+│   │   ├── new_dev.txt
+│   │   ├── new_test.txt
+│   │   └── new_train.txt 
+│   └── code
+│       ├── saved_dict
+│       ├── embeddings
+│       │    └── sgns.sogou.char
+│       ├── models
+│       │    ├── Att_TextRNN.py
+│       │    ├── FastText.py
+│       │    ├── TextCNN.py
+│       │    ├── TextRNN.py
+│       │    └── Transformer.py
+│       ├── char_embeddings.embeddings.pkl
+│       ├── char_embeddings.word2id.pkl
+│       ├── run.py
+│       ├── train_eval.py
+│       ├── utils.py
+│       └── utils_fasttext.py
+└── code
+    ├── analysis.ipynb
+    ├── jsonToCSV.py
+    ├── spider_fake.py
+    └── spider_fake.py
+```
 
 ## Reference
 If you are using this dataset, please kindly cite the following paper:
@@ -47,4 +99,4 @@ If you are using this dataset, please kindly cite the following paper:
 ~~~~
 
 ## Contact
-Please contact zhouxinyi@data.syr.edu if you have any question on our dataset.
+Please contact *zhouxinyi@data.syr.edu* if you have any question on our dataset.
