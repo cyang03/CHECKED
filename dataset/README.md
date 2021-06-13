@@ -19,22 +19,22 @@ This folder involves 1776 microblogs (json file) labeled *real*.
 Each microblog (json file) consists of all the same components as that in the *fake_news* folder excluding `analysis`.
 
 ## fake_news.csv
-This file contains all 344 *fake* microblogs (transfered from json files in the *fake_news* folder) with identical components except for `comments` and `reposts`. 
+This file contains all 344 *fake* microblogs (transfered from json files in the *fake_news* folder) with identical components except for `comments` and `reposts`. Download [fake_news.csv](https://drive.google.com/drive/folders/1sCeDspisqgmrPZE1A_8uupUUOPDT5My7?usp=sharing).
 
 ## real_news.csv
-This file contains all 1776 *real* microblogs (transfered from json files in the *real_news* folder) with identical components except for `comments` and `reposts`.
+This file contains all 1776 *real* microblogs (transfered from json files in the *real_news* folder) with identical components except for `comments` and `reposts`. Download [real_news.csv](https://drive.google.com/drive/folders/1sCeDspisqgmrPZE1A_8uupUUOPDT5My7?usp=sharing).
 
 ## fake_news_comment.csv
-This file contains the relationship between *fake* microblogs and comments. Each row contains one `microblog_id` and `comment_id` that commented the microblog.
+This file contains the relationship between *fake* microblogs and comments. Each row contains one `microblog_id` and `comment_id` that commented the microblog. Download [fake_news_comment.csv](https://drive.google.com/drive/folders/1sCeDspisqgmrPZE1A_8uupUUOPDT5My7?usp=sharing).
 
 ## fake_news_repost.csv
-This file contains the relationship between *fake* microblogs and reposts. Each row contains one `microblog_id` and `repost_id` that forwarded the microblog. 
+This file contains the relationship between *fake* microblogs and reposts. Each row contains one `microblog_id` and `repost_id` that forwarded the microblog. Download [fake_news_repost.csv](https://drive.google.com/drive/folders/1sCeDspisqgmrPZE1A_8uupUUOPDT5My7?usp=sharing).
 
 ## real_news_comment.csv
-This file contains the relationship between *real* microblogs and comments. Each row contains one `microblog_id` and `comment_id` that commented the microblog. 
+This file contains the relationship between *real* microblogs and comments. Each row contains one `microblog_id` and `comment_id` that commented the microblog. Download [real_news_comment.csv](https://drive.google.com/drive/folders/1sCeDspisqgmrPZE1A_8uupUUOPDT5My7?usp=sharing).
 
 ## real_news_repost.csv
-This file contains the relationship between *real* microblogs and reposts. Each row contains one `microblog_id` and `repost_id` that forwarded the microblog. 
+This file contains the relationship between *real* microblogs and reposts. Each row contains one `microblog_id` and `repost_id` that forwarded the microblog. Download [real_news_repost.csv](https://drive.google.com/drive/folders/1sCeDspisqgmrPZE1A_8uupUUOPDT5My7?usp=sharing).
 
 ## keyword_list.txt
 This file includes all the keywords that we used to determine if the microblog is about COVID-19. There are total 39 keywords (33 Chinese + 6 English).

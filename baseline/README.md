@@ -15,7 +15,7 @@ We divided the data, based on their posting time order, for training, validation
 ## How to use
 
 **1. Embedding words:** We use [Sogou News Word + Character Pre-Trained Chinese Word Vector](https://github.com/Embedding/Chinese-Word-Vectors). 
-* Download and unzip the file [char_embeddings.embeddings.pkl.zip]((https://drive.google.com/drive/folders/1ZyQa76PCDm80afwnTqYMwOxlqrPHxP8Y?usp=sharing)) to folder `./baseline/code`.
+* Download and unzip the file [char_embeddings.embeddings.pkl.zip](https://drive.google.com/drive/folders/1ZyQa76PCDm80afwnTqYMwOxlqrPHxP8Y?usp=sharing)) to folder `./baseline/code`.
 * Download and unzip the file [sgns.sogou.char.zip](https://drive.google.com/drive/folders/1ZyQa76PCDm80afwnTqYMwOxlqrPHxP8Y?usp=sharing) to folder `./baseline/code/embeddings`
 
 **2. Running codes**
