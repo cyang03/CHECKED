@@ -93,8 +93,9 @@ If you are using this dataset, please kindly cite the following paper:
 @article{yang2020checked,
   title={CHECKED: Chinese COVID-19 Fake News Dataset},
   author={Yang, Chen and Zhou, Xinyi and Zafarani, Reza},
-  journal={arXiv preprint arXiv:2010.09029},
-  year={2020}
+  journal={Social Network Analysis and Mining (SNAM)},
+  doi={10.1007/s13278-021-00766-8}
+  year={2021}
 }
 ~~~~
 
