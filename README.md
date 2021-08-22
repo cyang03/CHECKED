@@ -8,6 +8,8 @@ We care about users' privacy and made (will keep making) efforts to protecting i
 * Please use the CHECKED data only for academic research.
 
 **Update:** 
+We corrected a small amount of dates displayed in the comment sections of two microblogs, which occured due to unknown errors during the automatic information extraction process. We accomplished this by checking the dataset manually. We appreciate the user for pointing this issue out. If similar problems are to be found by future users, please contact us as we will fix them immediately. (August 22, 2021)
+
 We add `analysis` as a new keyword for each microblog labeled as *fake*. `analysis` contains the expert analysis and justification, which details the news falseness. Please check out the [*dataset*](https://github.com/cyang03/CHECKED/tree/master/dataset) folder for details. We also provide benchmark results of [FastText](https://arxiv.org/pdf/1607.01759.pdf), [TextCNN](https://arxiv.org/pdf/1408.5882.pdf), [TextRNN](https://arxiv.org/pdf/1605.05101.pdf), [Att-TextRNN](https://www.aclweb.org/anthology/P16-2034.pdf), and [Transformer](https://arxiv.org/pdf/1706.03762.pdf) using the CHECKED data in predicting fake news. Please check out the [*baseline*](https://github.com/cyang03/CHECKED/tree/master/baseline) folder for details. (June 9, 2021)
 
 ## Overiew
